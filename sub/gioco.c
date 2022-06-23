@@ -55,3 +55,19 @@ void gioco_Carte(char tipo, int *credito) {
         *credito = *credito + 10;
     }
 }
+
+void gioco_Roulette(int *credito) {
+    FettaRoulette *zero;
+    initRoulette(&zero);
+    printf("Scommetti su un numero da 0 a 36 (compresi): \n");
+    int scelta;
+    scanf("%d", &scelta);
+    int vincita = lancioPallina(zero, rand() % 37);
+    if (vincita == scelta) {
+        printf("Complimenti hai raddoppiato!\n");
+        *credito *= 2;
+    } else {
+        printf("Hai perso, mi dispiace.\n");
+        *credito = *credito - 10;
+    }
+}

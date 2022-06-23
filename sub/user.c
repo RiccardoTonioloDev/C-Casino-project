@@ -53,7 +53,6 @@ int cercaUtente(Utente u) {
     for (int i = 0; i < numeroUtenti; i++) {
         Utente tmp;
         fread(&tmp, sizeof(Utente), 1, fp);
-        printf("Nome: %s Saldo: %d\n", tmp.nome, tmp.saldo);
         if (strcmp(tmp.nome, u.nome) == 0) {
             fclose(fp);
             return i;

@@ -21,7 +21,8 @@ void setupUtente() {
 
 void scegliGiochi() {
     printf("1) Ramino (R);\n");
-    printf("2) Piacentine (P).\n");
+    printf("2) Piacentine (P);\n");
+    printf("3) Roulette (Z).\n");
     char scelta = 0;
     scanf("%c", &scelta);
     getchar();
@@ -31,8 +32,13 @@ void scegliGiochi() {
     getchar();
     Utente u;
     creaUtente(&u, nome);
-    gioco_Carte(scelta, &(u.saldo));
     updateSaldo(u);
+    if (scelta == 'Z')
+        gioco_Roulette(&(u.saldo));
+    else
+        gioco_Carte(scelta, &(u.saldo));
+    updateSaldo(u);
+    printf("Saldo disponibile: %d\n", u.saldo);
 }
 
 void (*arrayScelte[2])() = {setupUtente, scegliGiochi};

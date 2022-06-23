@@ -1,4 +1,4 @@
 TEST_MAZZO:
 gcc -I test_mazzo test_mazzo.c sub/carte.c sub/mazzo.c sub/utils.c
 TEST_GIOCA:
-gcc -I test_gioca test_gioca.c sub/carte.c sub/mazzo.c sub/utils.c sub/gioco.c
+gcc -I test_gioca test_gioca.c sub/carte.c sub/mazzo.c sub/utils.c sub/gioco.c sub/roulette. sub/user.c
